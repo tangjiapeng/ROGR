@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ROGR: Relightable 3D Objects using Generative Relighting</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/video_comparison.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+
+            <h1 class="title is-1 publication-title">ROGR: Relightable 3D Objects </br>using Generative Relighting</h1>
+            <div class="is-size-4 publication-authors">
+              <span class="author-block">
+                <a href="https://neurips.cc/Conferences/2024" target="_blank" style="font-size: 120%;"><b>arXiv 2025</b></a>
+              </span>
+            </div> 
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://tangjiapeng.github.io/">Jiapeng Tang</a><sup>*1,2</sup>,</span>
+  
+              <span class="author-block">
+                <a href="https://tangjiapeng.github.io/">Matthew Levine</a><sup>*2</sup>,</span>
+  
+              <span class="author-block">
+                    <a href="https://dorverbin.github.io/" target="_blank">Dor Verbin</a><sup>1</sup>,
+              </span>
+  
+              <span class="author-block">
+                <a href="http://stephangarbin.com/" target="_blank">Stephan Garbin</a><sup>1</sup>,
+              </span>
+  
+              <span class="author-block">
+                <a href="https://niessnerlab.org/members/matthias_niessner/profile.html">Matthias Niessner</a><sup>2</sup>,
+              </span>
+  
+              <span class="author-block">
+                <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>,
+              </span>
+  
+              <span class="author-block">
+                <a href="https://pratulsrinivasan.github.io/" target="_blank">Pratul P. Srinivasan</a><sup>1</sup>,</span>&nbsp;&nbsp;&nbsp;
+  
+              <span class="author-block">
+                <a href="https://henzler.github.io/" target="_blank">Philipp Henzler</a><sup>1</sup>&nbsp;&nbsp;&nbsp;
+              </span>
+            </div>
+  
+  
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Google Research,</span>
+              <span class="author-block"><sup>2</sup>Technical University of Munich</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2406.06527" target="_blank" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- <span class="link-block">
+                  <a href="https://github.com/illuminerf/illuminerf_results" target="_blank" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (for Quantitative Results)</span>
+                  </a>
+                </span> -->
+              </div>
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="./index.html" id="active-button" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-home"></i>
+                    </span>
+                    <span>Main Page</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="./stanford_orb.html" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-flask"></i>
+                    </span>
+                    <span>Stanford-ORB Gallery</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="./tensoir.html" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-flask"></i>
+                    </span>
+                    <span>TensoIR Gallery</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="./real.html" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-flask"></i>
+                    </span>
+                    <span>Real Object Gallery</span>
+                  </a>
+                </span>
+              </div>
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://github.com/illuminerf/illuminerf_results/releases" target="_blank" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-database"></i>
+                    </span>
+                    <span>Full Stanford-ORB Benchmark</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/illuminerf/illuminerf_results/releases" target="_blank" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-database"></i>
+                    </span>
+                    <span>Full TensoIR Benchmark</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- <section class="section" id="teaser">
+    <div class="container is-max-desktop">
+      <div class="columns is-mobile has-text-centered is-vcentered ">
+        <div class="column is-full is-vcentered">
+          <video class="video" loop playsinline muted autoplay controls src="./static/teaser.mp4"></video>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-sewing">
+            <video poster="" id="sewing" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/teaser/stationary_sewing.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+  
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="50%" width="50%">
+              <source src="./static/videos/teaser/beemer_original_lighting.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-steve">
+            <video poster="" id="steve2" autoplay controls muted loop playsinline height="50%" width="50%">
+              <source src="./static/videos/teaser/beemer_relit_spin_abandoned_church.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-chair-tp">
+            <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/teaser/staionary_car_3.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/teaser/staionary_car_5.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-fullbody">
+            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/teaser/stationary_car_0.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-blueshirt">
+            <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/teaser/stationary_car_1.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-mask">
+            <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/teaser/stationary_car_2.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-coffee">
+            <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/teaser/stationary_car4.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-toby">
+            <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/teaser/stationary_car5.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+  
+        <h2 class="subtitle has-text-centered">
+          Given an image collection under unknown lighting, <span class="dnerf">ROGR</span>
+          reconstructs a relightable neural radiance field, 
+          that can be rendered under any novel environment map without further optimization, 
+          on-the-fly relighting and novel view synthesis. 
+        </h2>
+        
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <h2 class="title is-3">Abstract</h2>
+      <div class="content has-text-justified">
+        <p>
+          We introduce <span class="dnerf">ROGR</span>, a novel approach that reconstructs a relightable 3D model of an object captured from multiple views, driven by a generative relighting model that simulates the effects of placing the object under novel environment illuminations. 
+          Our method samples the appearance of the object under multiple lighting environments, creating a dataset that is used to train a lighting-conditioned Neural Radiance Field (NeRF) that outputs the object's appearance under any input enviromental lighting. 
+         The lighting-conditioned NeRF uses a novel dual-branch architecture to encode the general lighting effects and specularities separately.
+         </p>
+         <p>
+           The optimized lighting-conditioned NeRF enables efficient feed-forward relighting under arbitrary environment maps without requiring per-illumination optimization or light transport simulation. 
+           We evaluate our approach on the established TensoIR and Stanford-ORB datasets, 
+           where it improves upon the state-of-the-art on most metrics,  showcase our approach on real-world object captures.
+         </p>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- method. -->
+      <h2 class="title is-3">Method</h2>
+      <!-- <div class="columns is-mobile has-text-centered is-size-7-mobile is-vcentered "> -->
+      <!-- <div class="column is-full">
+        <img src="./static/overview.png" />
+        <br/>
+        <div class="content has-text-left">
+          <ol>
+            <li>Given a set of images and camera poses in (a), we run NeRF to extract the 3D geometry as in (b);</li>
+            <li>Based on this geometry and a target light shown in (c), we create radiance cues for each given input view as in (d);</li>
+            <li>Next, we independently relight each input image using a Relighting Diffusion Model illustrated in (e) and sample S possible solutions for each given image displayed in (f);</li>
+            <li>Finally, we distill the relit set of images into a 3D representation through a Latent NeRF optimization as in (g) and (h).</li>
+          </ol>
+        </div>
+        <br/>
+      </div> -->
+      <!-- </div> -->
+
+      <!-- <p>Relighting results </p> <br> -->
+      <div class="content has-text-justified">
+        <label class="label" style="width: 100%; vertical-jpg: middle;margin: 0; padding: 0;">
+          <img src="./static/images/mvrelit.png" border="0" class="zoom">
+        </label>
+            <p>Our multi-view relighting diffusion model takes as input N posed images illuminated with a consistent, but unknown illumination, represented by the camera raymap and the source pixel values, and an environment map per image, that has been rotated to the camera pose. The diffusion model generates images of the same object from the same poses, but lit by input environment map. In order to generate our multi-illumination dataset, we repeat this relighting process M times with M different environment maps.</p>
+
+        <label class="label" style="width: 75%; vertical-jpg: middle;margin: 0; padding: 0;">
+          <img src="./static/images/relightnerf.png" border="0" class="zoom">
+        </label>
+          <p>  We use a combination of two lighting conditioning signals to train the NeRF on our generated multi-illumination dataset. The general lighting encoding $\mathbf{f}^{\text{general}}$ is used for encoding the full environment map in a single embedding, and is obtained using a transformer encoder applied to the entire sphere of incident radiance. The specular encoding $\mathbf{f}^{\text{specular}}$ is composed of the environment map value, as well as prefiltered versions of the environment map, queried at the reflection direction $\boldsymbol{\omega}_r$, which is the direction of the camera ray reflected about the surface normal vector. Combining these two conditioning signals provides the NeRF with all the information necessary for relighting diffuse materials as well as shiny ones which exhibit strong reflections. <em>shading embeddings</em>. </p>
+      </div>
+      
+
+      <h3 class="title is-4">Multi-view Consistent Relighting</h3>
+      <div class="column is-full">
+        <div class="content has-text-left">
+          <ul style="margin-top: -20px;">
+            <li><b>On the top</b>: we show diffusion sample results of single-image relighting model from Neural Gaffer;</li>
+            <li><b>On the bottom</b>: we show diffusion sample results of our multi-view diffusion model.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="columns is-mobile has-text-centered is-size-7-mobile is-vcentered ">
+        <div class="column is-one-third">
+          <video class="video" loop playsinline muted autoplay controls src="./static/diffusion_samples/vertical-stanford_orb-grogu_scene001-grogu_scene002.mp4"></video>
+        </div>
+        <div class="column is-one-third">
+          <video class="video" loop playsinline muted autoplay controls src="./static/diffusion_samples/vertical-tensoir-hotdog-bridge.mp4"></video>
+        </div>
+        <div class="column is-one-third">
+          <video class="video" loop playsinline muted autoplay controls src="./static/diffusion_samples/vertical-cat3d-unicorn-blinds.mp4"></video>
+        </div>
+      </div>
+
+
+      <h3 class="title is-4">Generalizable and Relightable Neural Radiance Fields </h3>
+      <div class="column is-full">
+        <div class="content has-text-left">
+          <ul style="margin-top: -20px;">
+            <li><b>On the top</b>: we show generalized nerf relighting results based on global condition;</li>
+            <li><b>On the middle</b>: we show generalized nerf relighting results based on specular condition;</li>
+            <li><b>On the bottom</b>: we show generalized nerf relighting results based on both global and specular condition.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="columns is-mobile has-text-centered is-size-7-mobile is-vcentered ">
+        <div class="column is-one-third">
+          <video class="video" loop playsinline muted autoplay controls src="./static/diffusion_samples/vertical-stanford_orb-grogu_scene001-grogu_scene002.mp4"></video>
+        </div>
+        <div class="column is-one-third">
+          <video class="video" loop playsinline muted autoplay controls src="./static/diffusion_samples/vertical-tensoir-hotdog-bridge.mp4"></video>
+        </div>
+        <div class="column is-one-third">
+          <video class="video" loop playsinline muted autoplay controls src="./static/diffusion_samples/vertical-cat3d-unicorn-blinds.mp4"></video>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- method. -->
+      <h2 class="title is-3">Related Works</h2>
+      <div class="column is-full">
+        <div class="content has-text-justified">
+          <p>
+            Check out the following works which also introduce a relighting diffusion model.
+          </p>
+          <p>
+            <a href="https://dilightnet.github.io/">DiLightNet: Fine-grained Lighting Control for Diffusion-based Image Generation</a>  (single image relighting with radiance cues)
+          </p>
+          <p>
+            <a href="https://neural-gaffer.github.io/">Neural Gaffer: Relighting Any Object via Diffusion </a>  (single image relighting, needs to re-optimized for novel lighting. )
+          </p>
+          <p>
+            <a href="https://repo-sam.inria.fr/fungraph/generative-radiance-field-relighting/">A Diffusion Approach to Radiance Field Relighting using Multi-Illumination Synthesis</a>   (single image relighting, needs to re-optimized for novel lighting)
+          </p>
+          <p>
+            <a href="https://illuminerf.github.io/">IllumiNeRF: 3D Relighting Without Inverse Rendering</a>  (single image relighting with radiance cues, needs to re-optimized for novel lighting.)
+          </p>
+          
+        </div>
+      </div>
+  </section>
+
+  <hr />
+
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{tang2025rogr,
+    author    = {Jiapeng Tang and Matthew Levine and Dor Verbin and Stephan Garbin and Matthias Niessner and Ricardo Martin-Brualla and Pratul P. Srinivasan and Philipp Henzler},
+    title     = {{ROGR: Relightable 3D Objects using Generative Relighting}},
+    booktitle = {xxxxx},
+    year      = {2025},
+}</code></pre>
+    </div>
+  </section> -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source
+                code</a> of this website,
+              we just ask that you link back to this page in the footer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

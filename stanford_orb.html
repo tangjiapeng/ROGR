@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ROGR: Relightable 3D Objects using Generative Relighting</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/video_comparison.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+
+            <h1 class="title is-1 publication-title">ROGR: Relightable 3D Objects </br>using Generative Relighting</h1>
+            <div class="is-size-4 publication-authors">
+              <span class="author-block">
+                <a href="https://neurips.cc/Conferences/2024" target="_blank" style="font-size: 120%;"><b>arXiv 2025</b></a>
+              </span>
+            </div> 
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://tangjiapeng.github.io/">Jiapeng Tang</a><sup>*1,2</sup>,</span>
+  
+              <span class="author-block">
+                <a href="https://tangjiapeng.github.io/">Matthew Levine</a><sup>*2</sup>,</span>
+  
+              <span class="author-block">
+                    <a href="https://dorverbin.github.io/" target="_blank">Dor Verbin</a><sup>1</sup>,
+              </span>
+  
+              <span class="author-block">
+                <a href="http://stephangarbin.com/" target="_blank">Stephan Garbin</a><sup>1</sup>,
+              </span>
+  
+              <span class="author-block">
+                <a href="https://niessnerlab.org/members/matthias_niessner/profile.html">Matthias Niessner</a><sup>2</sup>,
+              </span>
+  
+              <span class="author-block">
+                <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>,
+              </span>
+  
+              <span class="author-block">
+                <a href="https://pratulsrinivasan.github.io/" target="_blank">Pratul P. Srinivasan</a><sup>1</sup>,</span>&nbsp;&nbsp;&nbsp;
+  
+              <span class="author-block">
+                <a href="https://henzler.github.io/" target="_blank">Philipp Henzler</a><sup>1</sup>&nbsp;&nbsp;&nbsp;
+              </span>
+            </div>
+  
+  
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Google Research,</span>
+              <span class="author-block"><sup>2</sup>Technical University of Munich</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2406.06527" target="_blank" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- <span class="link-block">
+                  <a href="https://github.com/illuminerf/illuminerf_results" target="_blank" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (for Quantitative Results)</span>
+                  </a>
+                </span> -->
+              </div>
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="./index.html" id="active-button" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-home"></i>
+                    </span>
+                    <span>Main Page</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="./stanford_orb.html" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-flask"></i>
+                    </span>
+                    <span>Stanford-ORB Gallery</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="./tensoir.html" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-flask"></i>
+                    </span>
+                    <span>TensoIR Gallery</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="./real.html" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-flask"></i>
+                    </span>
+                    <span>Real Object Gallery</span>
+                  </a>
+                </span>
+              </div>
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://github.com/illuminerf/illuminerf_results/releases" target="_blank" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-database"></i>
+                    </span>
+                    <span>Full Stanford-ORB Benchmark</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/illuminerf/illuminerf_results/releases" target="_blank" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-database"></i>
+                    </span>
+                    <span>Full TensoIR Benchmark</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <section class="section" id="stanford_orb">
+    <div class="container is-max-desktop">
+
+      <h2 class="title is-3"><a href="https://stanfordorb.github.io/" target="_blank">[Real World] Stanford-ORB Dataset</a></h2>
+      <div class="content">
+        <h3 class="title is-4">
+          Relit Reconstructions
+        </h3>
+        <p>
+          We show novel view renderings of our relit reconstructions.
+          <br>
+          (Please refresh the page if videos do not start automatically)
+        </p>
+
+        <div class="tabs-widget" id="stanford-orb-tabs-widget">
+          <div class="tabs is-centered">
+            <ul class="is-marginless">
+              <!-- Object Tabs will be inserted here -->
+            </ul>
+          </div>
+          <div class="tabs-content">
+            <!-- Object Tab content will be inserted here -->
+          </div>
+        </div>
+
+        <h3 class="title is-4">Comparisons</h3>
+        <div class="content has-text-centered">
+          <div class="select">
+            <select id="stanford-orb-comparison-object-select">
+              <option value="grogu_scene001-grogu_scene002">grogu</option>
+              <option value="baking_scene001-baking_scene002">baking</option>
+              <option value="ball_scene002-ball_scene004">ball</option>
+              <option value="blocks_scene005-blocks_scene006">blocks</option>
+              <option value="cactus_scene005-cactus_scene007">cactus</option>
+              <option value="car_scene002-car_scene004">car</option>
+              <option value="gnome_scene003-gnome_scene007">gnome</option>
+              <option value="teapot_scene001-teapot_scene006">teapot</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="columns has-text-centered is-vcentered">
+          <div class="column is-one-third">
+            <div class="select is-multiple">
+              <select multiple size="8" id="stanford-orb-comparison-left-select">
+                <option value="gt">Ground Truth</option>
+                <option value="ours">Ours</option>
+                <option selected value="pbir">Neural-PBIR</option>
+                <option value="nvdiffrecmc">NVDiffRecMC</option>
+                <option value="invrender">InvRender</option>
+                <option value="nerfactor">NeRFactor</option>
+                <option value="nerd">NeRD</option>
+                <option value="nvdiffrec">NVDiffRec</option>
+                <option value="physg">PhySG</option>
+              </select>
+            </div>
+          </div>
+          <div class="column is-one-third">
+            <div class="image-comparison"
+              data-left-url="./static/stanford_orb_comparisons/baking_scene001-baking_scene002.gt.png"
+              data-right-url="./static/stanford_orb_comparisons/baking_scene001-baking_scene002.ours.png"
+              data-left-name="Ground Truth"
+              data-right-name="Ours">
+              <canvas></canvas>
+            </div>
+          </div>
+          <div class="column is-one-third">
+            <div class="select is-multiple">
+              <select multiple size="8" id="stanford-orb-comparison-right-select">
+                <option selected value="ours">Ours</option>
+                <option value="gt">Ground Truth</option>
+                <option value="pbir">Neural-PBIR</option>
+                <option value="nvdiffrecmc">NVDiffRecMC</option>
+                <option value="invrender">InvRender</option>
+                <option value="nerfactor">NeRFactor</option>
+                <option value="nerd">NeRD</option>
+                <option value="nvdiffrec">NVDiffRec</option>
+                <option value="physg">PhySG</option>
+              </select>
+            </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{tang2025rogr,
+    author    = {Jiapeng Tang and Matthew Levine and Dor Verbin and Stephan Garbin and Matthias Niessner and Ricardo Martin-Brualla and Pratul P. Srinivasan and Philipp Henzler},
+    title     = {{ROGR: Relightable 3D Objects using Generative Relighting}},
+    booktitle = {xxxxx},
+    year      = {2025},
+}</code></pre>
+    </div>
+  </section> -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source
+                code</a> of this website,
+              we just ask that you link back to this page in the footer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
