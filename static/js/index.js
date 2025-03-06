@@ -66,8 +66,8 @@ $(document).ready(function () {
   function updateLeftImage() {
     const leftValue = $('#stanford-orb-comparison-left-select').val()[0];
     const scene = $('#stanford-orb-comparison-object-select').val();
-    const basePath = './static/stanford_orb_comparisons/';
-    const leftUrl = `${basePath}${scene}.${leftValue}.png`;
+    const basePath = './static/stanford_orb_qualitative/';
+    const leftUrl = `${basePath}${scene}_${leftValue}.png`;
     const leftName = $('#stanford-orb-comparison-left-select option:selected').text();
 
     comparison.updateLeftImage(leftUrl, leftName);
@@ -76,8 +76,8 @@ $(document).ready(function () {
   function updateRightImage() {
     const rightValue = $('#stanford-orb-comparison-right-select').val()[0];
     const scene = $('#stanford-orb-comparison-object-select').val();
-    const basePath = './static/stanford_orb_comparisons/';
-    const rightUrl = `${basePath}${scene}.${rightValue}.png`;
+    const basePath = './static/stanford_orb_qualitative/';
+    const rightUrl = `${basePath}${scene}_${rightValue}.png`;
     const rightName = $('#stanford-orb-comparison-right-select option:selected').text();
 
     comparison.updateRightImage(rightUrl, rightName);
