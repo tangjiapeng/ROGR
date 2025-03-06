@@ -154,14 +154,24 @@
         <div class="content has-text-centered">
           <div class="select">
             <select id="stanford-orb-comparison-object-select">
-              <option value="grogu_scene001-grogu_scene002">grogu</option>
+              <!-- <option value="grogu_scene001-grogu_scene002">grogu</option>
               <option value="baking_scene001-baking_scene002">baking</option>
               <option value="ball_scene002-ball_scene004">ball</option>
               <option value="blocks_scene005-blocks_scene006">blocks</option>
               <option value="cactus_scene005-cactus_scene007">cactus</option>
               <option value="car_scene002-car_scene004">car</option>
               <option value="gnome_scene003-gnome_scene007">gnome</option>
-              <option value="teapot_scene001-teapot_scene006">teapot</option>
+              <option value="teapot_scene001-teapot_scene006">teapot</option> -->
+
+              <option value="teapot_scene001_000">teapot</option>
+              <option value="baking_scene001_008">baking</option>
+              <option value="ball_scene003_011">ball</option>
+              <option value="blocks_scene002_019">blocks</option>
+              <option value="cactus_scene001_002">cactus</option>
+              <option value="car_scene006_013">car</option>
+              <option value="gnome_scene005_014">gnome</option>
+              <!-- <option value="grogu_scene001_0">grogu</option> -->
+              <option value="grogu_scene003_010">grogu</option>
             </select>
           </div>
         </div>
@@ -170,9 +180,12 @@
           <div class="column is-one-third">
             <div class="select is-multiple">
               <select multiple size="8" id="stanford-orb-comparison-left-select">
-                <option value="gt">Ground Truth</option>
+                <option selected value="gt">Ground Truth</option>
                 <option value="ours">Ours</option>
-                <option selected value="pbir">Neural-PBIR</option>
+                <option value="illuminerf">illumiNeRF</option>
+                <option value="gaffer">NeuralGaffer</option>
+                <option value="r3dg">Relightable3DGS</option>
+                <option value="neuralpbir">Neural-PBIR</option>
                 <option value="nvdiffrecmc">NVDiffRecMC</option>
                 <option value="invrender">InvRender</option>
                 <option value="nerfactor">NeRFactor</option>
@@ -184,8 +197,8 @@
           </div>
           <div class="column is-one-third">
             <div class="image-comparison"
-              data-left-url="./static/stanford_orb_comparisons/baking_scene001-baking_scene002.gt.png"
-              data-right-url="./static/stanford_orb_comparisons/baking_scene001-baking_scene002.ours.png"
+              data-left-url="./static/stanford_orb_qualitative/baking_scene001_008_gt.png"
+              data-right-url="./static/stanford_orb_qualitative/baking_scene001_008_ours.png"
               data-left-name="Ground Truth"
               data-right-name="Ours">
               <canvas></canvas>
@@ -196,7 +209,10 @@
               <select multiple size="8" id="stanford-orb-comparison-right-select">
                 <option selected value="ours">Ours</option>
                 <option value="gt">Ground Truth</option>
-                <option value="pbir">Neural-PBIR</option>
+                <option value="illuminerf">illumiNeRF</option>
+                <option value="gaffer">NeuralGaffer</option>
+                <option value="r3dg">Relightable3DGS</option>
+                <option value="neuralpbir">Neural-PBIR</option>
                 <option value="nvdiffrecmc">NVDiffRecMC</option>
                 <option value="invrender">InvRender</option>
                 <option value="nerfactor">NeRFactor</option>
