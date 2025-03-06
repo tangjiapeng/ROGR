@@ -231,16 +231,22 @@ function createTargetSceneTabsStanfordOrb(srcName, tgtNames) {
           (b) Target Lighting
         </div>
       </div>
+
       <div class="columns is-mobile has-text-centered is-size-7-mobile is-vcentered ">
         <div class="column is-half">
-          <video class="video" width="512px" loop playsinline muted autoplay controls src="./static/stanford_orb_results/${srcName}.mp4"></video>
+          <video class="video" width="512px" loop playsinline muted autoplay controls src="./static/stanford_orb_results_illuminerf/${srcName}.mp4"></video>
           <br />
           (c) Source Rendering
         </div>
         <div class="column is-half">
-          <video class="video" width="512px" loop playsinline muted autoplay controls src="./static/stanford_orb_results/${srcName}-${tgtName}.mp4"></video>
+          <video class="video" width="512px" loop playsinline muted autoplay controls src="./static/stanford_orb_results_illuminerf/${srcName}-${tgtName}.mp4"></video>
           <br />
-          (d) Relit Rendering
+          (d) Relit Rendering (illumiNeRF) 
+        </div>
+        <div class="column is-half">
+          <video class="video" width="512px" loop playsinline muted autoplay controls src="./static/stanford_orb_spins_ours/${srcName}_${tgtName}.mp4"></video>
+          <br />
+          (e) Relit Rendering (Ours) 
         </div>
       </div>
     `;
