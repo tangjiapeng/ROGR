@@ -100,10 +100,15 @@ $(document).ready(function () {
 
 
 let STANFORD_ORB_OBJECTS = {
-  "grogu": {
-    "grogu_scene001": ["grogu_scene002", "grogu_scene003"],
-    "grogu_scene002": ["grogu_scene001", "grogu_scene003"],
-    "grogu_scene003": ["grogu_scene001", "grogu_scene002"],
+  "baking": {
+    "baking_scene001": ["baking_scene002", "baking_scene003"],
+    "baking_scene002": ["baking_scene001", "baking_scene003"],
+    "baking_scene003": ["baking_scene001", "baking_scene002"],
+  },
+  "blocks": {
+    "blocks_scene002": ["blocks_scene005", "blocks_scene006"],
+    "blocks_scene005": ["blocks_scene002", "blocks_scene006"],
+    "blocks_scene006": ["blocks_scene002", "blocks_scene005"],
   },
   "pepsi": {
     "pepsi_scene002": ["pepsi_scene003", "pepsi_scene004"],
@@ -124,16 +129,6 @@ let STANFORD_ORB_OBJECTS = {
     "car_scene002": ["car_scene004", "car_scene006"],
     "car_scene006": ["car_scene002", "car_scene004"],
     "car_scene004": ["car_scene002", "car_scene006"],
-  },
-  "baking": {
-    "baking_scene001": ["baking_scene002", "baking_scene003"],
-    "baking_scene002": ["baking_scene001", "baking_scene003"],
-    "baking_scene003": ["baking_scene001", "baking_scene002"],
-  },
-  "blocks": {
-    "blocks_scene002": ["blocks_scene005", "blocks_scene006"],
-    "blocks_scene005": ["blocks_scene002", "blocks_scene006"],
-    "blocks_scene006": ["blocks_scene002", "blocks_scene005"],
   },
   "chips": {
     "chips_scene002": ["chips_scene003", "chips_scene004"],
@@ -169,6 +164,11 @@ let STANFORD_ORB_OBJECTS = {
     "pitcher_scene001": ["pitcher_scene005", "pitcher_scene007"],
     "pitcher_scene005": ["pitcher_scene001", "pitcher_scene007"],
     "pitcher_scene007": ["pitcher_scene001", "pitcher_scene005"],
+  },
+  "grogu": {
+    "grogu_scene001": ["grogu_scene002", "grogu_scene003"],
+    "grogu_scene002": ["grogu_scene001", "grogu_scene003"],
+    "grogu_scene003": ["grogu_scene001", "grogu_scene002"],
   },
 }
 
@@ -210,7 +210,7 @@ function createStanfordOrbTabsWidget() {
 
 function createTargetSceneTabsStanfordOrb(srcName, tgtNames) {
   let targetTabWidget = $('<div class="tabs-widget"></div>');
-  // let targetTabList = $('<div class="tabs is-centered is-toggle is-small"><ul class="is-marginless"></ul></div>');
+  // let targetTabList = $('<div class="tabs is-centered is-toggle is-small"><ul class="is-marginless"></ul></div>');    // stanford_orb_results_illuminerf
   let targetTabList = $('<div class="columns is-mobile is-vcentered"><div class="column is-4 has-text-right is-small"><p>Select Target Lighting</p></div><div class="tabs is-8 is-toggle is-small"><ul class="is-marginless"></ul></div></div>');
   let targetTabContent = $('<div class="tabs-content has-text-centered"></div>');
 
@@ -232,19 +232,19 @@ function createTargetSceneTabsStanfordOrb(srcName, tgtNames) {
         </div>
       </div>
 
-      <div class="columns is-mobile has-text-centered is-size-7-mobile is-vcentered ">
+      <div class="columns is-mobile has-text-centered is-size-7-mobile is-vcentered "> 
         <div class="column is-half">
-          <video class="video" width="512px" loop playsinline muted autoplay controls src="./static/stanford_orb_results_illuminerf/${srcName}.mp4"></video>
+          <video class="video" width="512px" loop playsinline muted autoplay controls src="./static/stanford_orb_renders_compare_illuminerf/${srcName}_${tgtName}_source_lighting.mp4"></video>
           <br />
           (c) Source Rendering
         </div>
         <div class="column is-half">
-          <video class="video" width="512px" loop playsinline muted autoplay controls src="./static/stanford_orb_results_illuminerf/${srcName}-${tgtName}.mp4"></video>
+          <video class="video" width="512px" loop playsinline muted autoplay controls src="./static/stanford_orb_renders_compare_illuminerf/${srcName}_${tgtName}_illuminerf.mp4"></video>
           <br />
           (d) Relit Rendering (illumiNeRF) 
         </div>
         <div class="column is-half">
-          <video class="video" width="512px" loop playsinline muted autoplay controls src="./static/stanford_orb_spins_ours/${srcName}_${tgtName}.mp4"></video>
+          <video class="video" width="512px" loop playsinline muted autoplay controls src="./static/stanford_orb_renders_compare_illuminerf/${srcName}_${tgtName}.mp4"></video>
           <br />
           (e) Relit Rendering (Ours) 
         </div>

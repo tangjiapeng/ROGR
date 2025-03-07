@@ -13,17 +13,28 @@ os.makedirs(output_folder, exist_ok=True)
 video_extensions = (".mp4", ".avi", ".mov", ".mkv")
 video_files = [f for f in os.listdir(input_folder) if f.lower().endswith(video_extensions)]
 
+#['armadillo-fireplace', 'armadillo-forest', 'armadillo-city',  'armadillo-bridge']
+
 for video_file in video_files[:100]:
+    if 'armadillo-fireplace' in output_folder or 'armadillo-forest' in output_folder or 'armadillo-city' in output_folder or  'armadillo-bridge' in output_folder:
+        num_frames = 98
+    elif 'armadillo-fireplace' in output_folder:
+        num_frames = 96
+    else:
+        num_frames = 100
     input_path = os.path.join(input_folder, video_file)
     output_path = os.path.join(output_folder, video_file)
 
     # Read video frames and metadata
     frames = iio.imread(input_path, index=None)
     #assert len(frames) == 200,
-    print(f"Expected 200 frames, but got {len(frames)}, {input_path}")
+    if len(frames) != 100 and  len(frames) != 200:
+        print(f"Expected 100 frames, but got {len(frames)}, {input_path}")
+        
+    frames = frames[:num_frames]
 
     # Write video with 30 FPS
-    iio.imwrite(output_path, np.array(frames), fps=15, plugin="pyav", codec="libx264")
+    iio.imwrite(output_path, np.array(frames), fps=20, plugin="pyav", codec="libx264")
 
     print(f"Saved: {output_path}")
 
