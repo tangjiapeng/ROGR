@@ -251,8 +251,8 @@
             for relighting diffuse materials as well as shiny ones which exhibit strong reflections. <em>shading embeddings</em>. </p>
             -->
             <p>
-            We use a combination of two lighting conditioning signals to train the NeRF on our generated multi-illumination dataset. The general lighting encoding <b>f<sub>general</sub></b> is used for encoding the full environment map in a 
-            single embedding and is obtained using a transformer encoder applied to the entire sphere of incident radiance. The specular encoding <b>f<sub>specular</sub></b> is composed of the environment map value, as well as prefiltered versions of the environment map, 
+            We use a combination of two lighting conditioning signals to train the NeRF on our generated multi-illumination dataset. The general lighting encoding <b>f<sup>general</sup></b> is used for encoding the full environment map in a 
+            single embedding and is obtained using a transformer encoder applied to the entire sphere of incident radiance. The specular encoding <b>f<sup>specular</sup></b> is composed of the environment map value, as well as prefiltered versions of the environment map, 
             queried at the reflection direction <b>&omega;<sub>r</sub></b>,
              which is the direction of the camera ray reflected about the surface normal vector. Combining these two conditioning signals provides the NeRF with all the information necessary for relighting diffuse materials as well as shiny ones that exhibit strong reflections.
             </p>
@@ -263,21 +263,28 @@
       <div class="column is-full">
         <div class="content has-text-left">
           <ul style="margin-top: -20px;">
-            <li><b>On the top</b>: we show diffusion sample results of single-image relighting model from Neural Gaffer;</li>
-            <li><b>On the bottom</b>: we show diffusion sample results of our multi-view diffusion model.</li>
+            <li><b>On the left</b>: we show diffusion sample results of single-image relighting model from Neural Gaffer;</li>
+            <li><b>On the middle</b>:  we show diffusion sample results of our 16-view relit diffusion model;</li>
+            <li><b>On the right</b>: we show th reference ground truths.</li>
           </ul>
         </div>
       </div>
 
       <div class="columns is-mobile has-text-centered is-size-7-mobile is-vcentered ">
         <div class="column is-one-third">
-          <video class="video" loop playsinline muted autoplay controls src="./static/diffusion_samples/vertical-stanford_orb-grogu_scene001-grogu_scene002.mp4"></video>
+          <video class="video" loop playsinline muted autoplay controls src="./static/diffusion_samples_fps1/lego_bridge_gaffer.mp4"></video>
+          <video class="video" loop playsinline muted autoplay controls src="./static/diffusion_samples_fps1/ficus_fireplace_gaffer.mp4"></video>
+          <p> Neural Gaffer 1-view diffusion </p>
         </div>
         <div class="column is-one-third">
-          <video class="video" loop playsinline muted autoplay controls src="./static/diffusion_samples/vertical-tensoir-hotdog-bridge.mp4"></video>
+          <video class="video" loop playsinline muted autoplay controls src="./static/diffusion_samples_fps1/lego_bridge.mp4"></video>
+          <video class="video" loop playsinline muted autoplay controls src="./static/diffusion_samples_fps1/ficus_fireplace.mp4"></video>
+          <p> Our 16-view diffusion </p>
         </div>
         <div class="column is-one-third">
-          <video class="video" loop playsinline muted autoplay controls src="./static/diffusion_samples/vertical-cat3d-unicorn-blinds.mp4"></video>
+          <video class="video" loop playsinline muted autoplay controls src="./static/diffusion_samples_fps1/lego_bridge_gt.mp4"></video>
+          <video class="video" loop playsinline muted autoplay controls src="./static/diffusion_samples_fps1/ficus_fireplace_gt.mp4"></video>
+          <p> Ground truth </p>
         </div>
       </div>
 
@@ -295,17 +302,17 @@
 
       <div class="columns is-mobile has-text-centered is-size-7-mobile is-vcentered ">
         <div class="column is-one-third">
-          <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/hotdog_no_global.mp4"></video>
+          <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/hotdog_no_global_100.mp4"></video>
           <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/lego_no_global.mp4"></video>
           <p> only Specular Condition </p>
         </div>
         <div class="column is-one-third">
-          <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/hotdog_no_specular.mp4"></video>
+          <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/hotdog_no_specular_100.mp4"></video>
           <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/lego_no_direcct.mp4"></video>
           <p> only General Condition </p>
         </div>
         <div class="column is-one-third">
-          <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/hotdog_both.mp4"></video>
+          <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/hotdog_both_100.mp4"></video>
           <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/lego_both.mp4"></video>
           <p> General and Specular Condition </p>
         </div>

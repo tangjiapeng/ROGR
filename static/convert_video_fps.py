@@ -6,8 +6,11 @@ import numpy as np
 # input_folder = "./tensoir_results"  # Change this to your folder path
 # output_folder = "./tensoir_results_fps15"  # Change if needed, else use input folder
 
-input_folder = './ablation_study'
-output_folder = './ablation_study_fps15'
+# input_folder = './ablation_study'
+# output_folder = './ablation_study_fps15'
+fps=20
+input_folder = './diffusion_samples'
+output_folder = './diffusion_samples_fps1'
 
 # Ensure output folder exists
 os.makedirs(output_folder, exist_ok=True)
@@ -25,6 +28,10 @@ for video_file in video_files[:100]:
         num_frames = 96
     else:
         num_frames = 100
+
+    if 'diffusion_samples' in input_folder:
+        num_frames = 50
+        fps =1 
     input_path = os.path.join(input_folder, video_file)
     output_path = os.path.join(output_folder, video_file)
 
@@ -37,7 +44,7 @@ for video_file in video_files[:100]:
     frames = frames[:num_frames]
 
     # Write video with 30 FPS
-    iio.imwrite(output_path, np.array(frames), fps=20, plugin="pyav", codec="libx264")
+    iio.imwrite(output_path, np.array(frames), fps=fps, plugin="pyav", codec="libx264")
 
     print(f"Saved: {output_path}")
 
