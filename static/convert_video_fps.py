@@ -3,8 +3,11 @@ import imageio.v3 as iio
 import numpy as np
 
 # Input and output directory
-input_folder = "./tensoir_results"  # Change this to your folder path
-output_folder = "./tensoir_results_fps15"  # Change if needed, else use input folder
+# input_folder = "./tensoir_results"  # Change this to your folder path
+# output_folder = "./tensoir_results_fps15"  # Change if needed, else use input folder
+
+input_folder = './ablation_study'
+output_folder = './ablation_study_fps15'
 
 # Ensure output folder exists
 os.makedirs(output_folder, exist_ok=True)
