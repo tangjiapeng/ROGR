@@ -46,8 +46,8 @@
   
 
             <div class="column has-text-centered">
-              <div class="publication-links">
-                <!-- <span class="link-block">
+              <!-- <div class="publication-links">
+                <span class="link-block">
                   <a href="https://arxiv.org/abs/2406.06527" target="_blank" class="external-link button is-normal is-rounded">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -62,8 +62,8 @@
                     </span>
                     <span>Code (for Quantitative Results)</span>
                   </a>
-                </span> -->
-              </div>
+                </span>
+              </div> -->
               <div class="publication-links">
                 <span class="link-block">
                   <a href="./index.html" id="active-button" class="external-link button is-normal is-rounded">
@@ -87,14 +87,6 @@
                       <i class="fas fa-flask"></i>
                     </span>
                     <span>TensoIR Gallery</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="./real.html" class="external-link button is-normal is-rounded">
-                    <span class="icon">
-                      <i class="fas fa-flask"></i>
-                    </span>
-                    <span>Real Object Gallery</span>
                   </a>
                 </span>
               </div>
@@ -147,7 +139,7 @@
             </video>
           </div>
 
-          <div class="item item-sewing">
+          <!-- <div class="item item-sewing">
             <video poster="" id="sewing" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/stationary/beemer_abandoned_2.mp4"
                       type="video/mp4">
@@ -165,7 +157,7 @@
               <source src="./static/videos/stationary/beemer_abandoned_church_1.mp4"
                       type="video/mp4">
             </video>
-          </div>
+          </div> -->
           <div class="item item-chair-tp">
             <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/stationary/lego_city.mp4"
@@ -181,42 +173,6 @@
           <div class="item item-fullbody">
             <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/stationary/lego_night.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          
-          <div class="item item-blueshirt">
-            <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/real_object_renders/bridge.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-
-          <div class="item item-mask">
-            <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/real_object_renders/city.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-          <div class="item item-coffee">
-            <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/real_object_renders/forest.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          
-          <div class="item item-toby">
-            <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/real_object_renders/fireplace.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-          <div class="item item-tobyy">
-            <video poster="" id="tobyy" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/real_object_renders/night.mp4s"
                       type="video/mp4">
             </video>
           </div>
@@ -287,7 +243,19 @@
         <label class="label" style="width: 75%; vertical-jpg: middle;margin: 0; padding: 0;">
           <img src="./static/images/relightnerf.png" border="0" class="zoom">
         </label>
-          <p>  We use a combination of two lighting conditioning signals to train the NeRF on our generated multi-illumination dataset. The general lighting encoding $\mathbf{f}^{\text{general}}$ is used for encoding the full environment map in a single embedding, and is obtained using a transformer encoder applied to the entire sphere of incident radiance. The specular encoding $\mathbf{f}^{\text{specular}}$ is composed of the environment map value, as well as prefiltered versions of the environment map, queried at the reflection direction $\boldsymbol{\omega}_r$, which is the direction of the camera ray reflected about the surface normal vector. Combining these two conditioning signals provides the NeRF with all the information necessary for relighting diffuse materials as well as shiny ones which exhibit strong reflections. <em>shading embeddings</em>. </p>
+          <!-- 
+        <p>  We use a combination of two lighting conditioning signals to train the NeRF on our generated multi-illumination dataset. 
+            The general lighting encoding $\mathbf{f}^{\text{general}}$ is used for encoding the full environment map in a single embedding, and is obtained using a transformer encoder applied to the entire sphere of incident radiance. 
+            The specular encoding $\mathbf{f}^{\text{specular}}$ is composed of the environment map value, as well as prefiltered versions of the environment map, queried at the reflection direction $\boldsymbol{\omega}_r$, 
+            which is the direction of the camera ray reflected about the surface normal vector. Combining these two conditioning signals provides the NeRF with all the information necessary 
+            for relighting diffuse materials as well as shiny ones which exhibit strong reflections. <em>shading embeddings</em>. </p>
+            -->
+            <p>
+            We use a combination of two lighting conditioning signals to train the NeRF on our generated multi-illumination dataset. The general lighting encoding <b>f<sub>general</sub></b> is used for encoding the full environment map in a 
+            single embedding and is obtained using a transformer encoder applied to the entire sphere of incident radiance. The specular encoding <b>f<sub>specular</sub></b> is composed of the environment map value, as well as prefiltered versions of the environment map, 
+            queried at the reflection direction <b>&omega;<sub>r</sub></b>,
+             which is the direction of the camera ray reflected about the surface normal vector. Combining these two conditioning signals provides the NeRF with all the information necessary for relighting diffuse materials as well as shiny ones that exhibit strong reflections.
+            </p>
       </div>
       
 
@@ -318,23 +286,33 @@
       <div class="column is-full">
         <div class="content has-text-left">
           <ul style="margin-top: -20px;">
-            <li><b>On the top</b>: we show generalized nerf relighting results based on global condition;</li>
-            <li><b>On the middle</b>: we show generalized nerf relighting results based on specular condition;</li>
-            <li><b>On the bottom</b>: we show generalized nerf relighting results based on both global and specular condition.</li>
+            <li><b>On the left</b>: we show generalized nerf relighting results based on specular condition;</li>
+            <li><b>On the middle</b>: we show generalized nerf relighting results based on global condition;</li>
+            <li><b>On the right</b>: we show generalized nerf relighting results based on both global and specular condition.</li>
           </ul>
         </div>
       </div>
 
       <div class="columns is-mobile has-text-centered is-size-7-mobile is-vcentered ">
         <div class="column is-one-third">
-          <video class="video" loop playsinline muted autoplay controls src="./static/diffusion_samples/vertical-stanford_orb-grogu_scene001-grogu_scene002.mp4"></video>
+          <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/hotdog_no_global.mp4"></video>
+          <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/lego_no_global.mp4"></video>
+          <p> only Specular Condition </p>
         </div>
         <div class="column is-one-third">
-          <video class="video" loop playsinline muted autoplay controls src="./static/diffusion_samples/vertical-tensoir-hotdog-bridge.mp4"></video>
+          <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/hotdog_no_specular.mp4"></video>
+          <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/lego_no_direcct.mp4"></video>
+          <p> only General Condition </p>
         </div>
         <div class="column is-one-third">
-          <video class="video" loop playsinline muted autoplay controls src="./static/diffusion_samples/vertical-cat3d-unicorn-blinds.mp4"></video>
+          <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/hotdog_both.mp4"></video>
+          <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/lego_both.mp4"></video>
+          <p> General and Specular Condition </p>
         </div>
+        <!-- <div class="column is-one-fourth">
+          <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study/both.mp4"></video>
+          <p> Ground Truth </p>
+        </div> -->
       </div>
 
     </div>
