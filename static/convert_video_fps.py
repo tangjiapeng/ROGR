@@ -3,14 +3,16 @@ import imageio.v3 as iio
 import numpy as np
 
 # Input and output directory
-# input_folder = "./tensoir_results"  # Change this to your folder path
-# output_folder = "./tensoir_results_fps15"  # Change if needed, else use input folder
+fps = 20
+input_folder = "./tensoir_results"  # Change this to your folder path
+output_folder = "./tensoir_results_fps15"  # Change if needed, else use input folder
 
 # input_folder = './ablation_study'
 # output_folder = './ablation_study_fps15'
-fps=20
-input_folder = './diffusion_samples'
-output_folder = './diffusion_samples_fps1'
+
+# fps=20
+# input_folder = './diffusion_samples'
+# output_folder = './diffusion_samples_fps1'
 
 # Ensure output folder exists
 os.makedirs(output_folder, exist_ok=True)
@@ -18,6 +20,7 @@ os.makedirs(output_folder, exist_ok=True)
 # Get all video files in the folder (modify extensions if needed)
 video_extensions = (".mp4", ".avi", ".mov", ".mkv")
 video_files = [f for f in os.listdir(input_folder) if f.lower().endswith(video_extensions)]
+video_files = [f for f in video_files if 'pbir' in f]
 
 #['armadillo-fireplace', 'armadillo-forest', 'armadillo-city',  'armadillo-bridge']
 

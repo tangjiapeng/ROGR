@@ -21,6 +21,42 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
   <script src="./static/js/video_comparison.js"></script>
+
+  <style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+  }
+
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tr:hover {
+    background-color: #ddd;
+  }
+
+  caption {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+</style>
+
 </head>
 
 <body>
@@ -32,21 +68,55 @@
           <div class="column has-text-centered">
 
             <h1 class="title is-1 publication-title">ROGR: Relightable 3D Objects </br>using Generative Relighting</h1>
-            <!-- <div class="is-size-4 publication-authors">
+            <div class="is-size-4 publication-authors">
               <span class="author-block">
-                <a href="https://neurips.cc/Conferences/2024" target="_blank" style="font-size: 120%;"><b>arXiv 2025</b></a>
+                <a href="https://neurips.cc/Conferences/2025" target="_blank" style="font-size: 120%;"><b>NeurIPS 2025 (Spotlight)</b></a>
               </span>
-            </div>  -->
+            </div> 
 
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                Anonymous Author
+                <a href="https://tangjiapeng.github.io/">Jiapeng Tang</a><sup>*1,3</sup>,</span>
+  
+              <span class="author-block">
+                <a href="https://tangjiapeng.github.io/">Matthew Levine</a><sup>*1</sup>,</span>
+  
+              <span class="author-block">
+                    <a href="https://dorverbin.github.io/" target="_blank">Dor Verbin</a><sup>2</sup>,
               </span>
+  
+              <span class="author-block">
+                <a href="http://stephangarbin.com/" target="_blank">Stephan J. Garbin</a><sup>1</sup>,
+              </span>
+  
+              <span class="author-block">
+                <a href="https://niessnerlab.org/members/matthias_niessner/profile.html">Matthias Niessner</a><sup>3</sup>,
+              </span>
+  
+              <span class="author-block">
+                <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>1</sup>,
+              </span>
+  
+              <span class="author-block">
+                <a href="https://pratulsrinivasan.github.io/" target="_blank">Pratul P. Srinivasan</a><sup>2</sup>,</span>&nbsp;&nbsp;&nbsp;
+  
+              <span class="author-block">
+                <a href="https://henzler.github.io/" target="_blank">Philipp Henzler</a><sup>1</sup>&nbsp;&nbsp;&nbsp;
+              </span>
+            </div>
+  
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>*</sup>Equal Contribution</span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Google Research</span>
+              <span class="author-block"><sup>2</sup>Google Deepmind</span>
+              <span class="author-block"><sup>3</sup>Technical University of Munich</span>
             </div>
   
 
             <div class="column has-text-centered">
-              <!-- <div class="publication-links">
+              <div class="publication-links">
                 <span class="link-block">
                   <a href="https://arxiv.org/abs/2406.06527" target="_blank" class="external-link button is-normal is-rounded">
                     <span class="icon">
@@ -54,7 +124,7 @@
                     </span>
                     <span>arXiv</span>
                   </a>
-                </span> -->
+                </span>
                 <!-- <span class="link-block">
                   <a href="https://github.com/illuminerf/illuminerf_results" target="_blank" class="external-link button is-normal is-rounded">
                     <span class="icon">
@@ -89,6 +159,15 @@
                     <span>TensoIR Gallery</span>
                   </a>
                 </span>
+               <span class="link-block">
+                  <a href="./wild.html" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-flask"></i>
+                    </span>
+                    <span>In the Wild Gallery</span>
+                  </a>
+                </span>
+
               </div>
               <!-- <div class="publication-links">
                 <span class="link-block">
@@ -164,15 +243,24 @@
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-shiba">
-            <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/stationary/lego_fireplace.mp4"
+
+          <div class="item item-fullbody">
+            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/tensoir_results/hotdog-bridge-poster-sized.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-fullbody">
-            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/stationary/lego_night.mp4"
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/stanford_orb_renders_compare_illuminerf/pepsi_scene002_pepsi_scene003-poster.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+    
+
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/stationary/lego_fireplace.mp4"
                       type="video/mp4">
             </video>
           </div>
@@ -213,6 +301,9 @@
 
   <hr />
 
+
+
+
   <section class="section">
     <div class="container is-max-desktop">
       <!-- method. -->
@@ -240,16 +331,6 @@
         </label>
             <p>Our multi-view relighting diffusion model takes as input N posed images illuminated with a consistent, but unknown illumination, represented by the camera raymap and the source pixel values, and an environment map per image, that has been rotated to the camera pose. The diffusion model generates images of the same object from the same poses, but lit by input environment map. In order to generate our multi-illumination dataset, we repeat this relighting process M times with M different environment maps.</p>
 
-        <label class="label" style="width: 75%; vertical-jpg: middle;margin: 0; padding: 0;">
-          <img src="./static/images/relightnerf.png" border="0" class="zoom">
-        </label>
-          <!-- 
-        <p>  We use a combination of two lighting conditioning signals to train the NeRF on our generated multi-illumination dataset. 
-            The general lighting encoding $\mathbf{f}^{\text{general}}$ is used for encoding the full environment map in a single embedding, and is obtained using a transformer encoder applied to the entire sphere of incident radiance. 
-            The specular encoding $\mathbf{f}^{\text{specular}}$ is composed of the environment map value, as well as prefiltered versions of the environment map, queried at the reflection direction $\boldsymbol{\omega}_r$, 
-            which is the direction of the camera ray reflected about the surface normal vector. Combining these two conditioning signals provides the NeRF with all the information necessary 
-            for relighting diffuse materials as well as shiny ones which exhibit strong reflections. <em>shading embeddings</em>. </p>
-            -->
             <p>
             We use a combination of two lighting conditioning signals to train the NeRF on our generated multi-illumination dataset. The general lighting encoding <b>f<sup>general</sup></b> is used for encoding the full environment map in a 
             single embedding and is obtained using a transformer encoder applied to the entire sphere of incident radiance. The specular encoding <b>f<sup>specular</sup></b> is composed of the environment map value, as well as prefiltered versions of the environment map, 
@@ -325,6 +406,45 @@
     </div>
   </section>
 
+  <!-- <section>
+    <div class="container is-max-desktop">
+          <h3 class="title is-4">Computational Efficiency </h3>
+        <div class="content has-text-justified">
+          A main  feature of our method is that once a radiance field has been optimized for a particular scene, re-rendering under novel illumination - <b> even illumination unseen when initially optimized </b> is very efficient. This is highlighted in the following table. IllumiNeRF reports a total of 2.5 hours to optimize their model across all stages. Our model is similarly expensive to fit, (0.5 hours for diffusion sampling and 2 hours for NeRF optimization, although both reported on more expensive hardware). Both methods require only a single, efficient query of the NeRF per rendered image. However, if IllumiNeRF needs to be rendered under a <i>different</i> illumination condition than it was optimized for, it requires fitting an entirely new model; our approach does not.  
+          </p>
+      </div>
+    </div>
+
+      <table>
+        <caption>Speed Comparison of Different Methods on TensoIR</caption>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Optimization Time</th>
+            <th>Render Time (fixed illumination)</th>
+            <th>Render Time (novel illumination)</th>
+            <th>Hardware</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IllumiNeRF</td>
+            <td>2.5hrs</td>
+            <td><1min</td>
+            <td>2.5hrs</td>
+            <td>A100 + TPUv5</td>
+          </tr>
+          <tr>
+            <td>Ours</td>
+            <td>2.5hrs</td>
+            <td><1min</td>
+            <td><1min</td>
+            <td>H100 + TPUv5</td>
+          </tr>
+        </tbody>
+      </table>
+  </section> -->
+
   <section class="section">
     <div class="container is-max-desktop">
       <!-- method. -->
@@ -346,12 +466,47 @@
           <p>
             <a href="https://illuminerf.github.io/">IllumiNeRF: 3D Relighting Without Inverse Rendering</a>  (single image relighting with radiance cues, needs to re-optimized for novel lighting.)
           </p>
+          <p>
+            <a href="https://arxiv.org/abs/2410.06231">RelitLRM: Generative Relightable Radiance for Large Reconstruction Models</a> (directly generate relightable NeRF from sparse views and the target illumination, but does not guarantee consistent geometry across environment maps.)
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2501.18590">DiffusionRenderer: Neural Inverse and Forward Rendering with Video Diffusion Models</a>  (video diffusion model for relighting but lacks 3D consistency and slow inference speed)
           
         </div>
       </div>
   </section>
 
+
+   <section class="section">
+    <div class="container is-max-desktop">
+      <!-- method. -->
+      <h2 class="title is-3">Acknowledgements</h2>
+      <div class="column is-full">
+        <div class="content has-text-justified">
+          <p>
+            We would like to thank Xiaoming Zhao, Rundi Wu, Songyou Peng, Ruiqi Gao, Ben Poole, Aleksander Holynski, Jason Zhang, Jonathan T. Barron, Stan Szymanowicez, Hadi Alzayer, Alex Trevithick, and Jiahui Lei 
+            for their valuable contributions. We also extend our gratitude to Shlomi Fruchter, Kevin Murphy, Mohammad Babaeizadeh, Han Zhang and Amir Hertz for training the base text-to-image latent diffusion model.
+          </p>
+        </div>
+      </div>
+  </section>
+  
   <hr />
+
+
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{tang2025rogr,
+        author    = {Jiapeng Tang and Matthew Levine and Dor Verbin and Stephan J. Garbin and Matthias Niessner and Ricardo Martin-Brualla and Pratul P. Srinivasan and Philipp Henzler},
+        title     = {{ROGR: Relightable 3D Objects using Generative Relighting}},
+        booktitle = {Advances in Neural Information Processing Systems},
+        year      = {2025},
+    }</code></pre>
+    </div>
+</section>
+
+
 
   <footer class="footer">
     <div class="container">

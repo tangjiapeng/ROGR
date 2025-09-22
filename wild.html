@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ROGR: Relightable 3D Objects using Generative Relighting</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/video_comparison.js"></script>
+
+  <style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+  }
+
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tr:hover {
+    background-color: #ddd;
+  }
+
+  caption {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+</style>
+
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+
+            <h1 class="title is-1 publication-title">ROGR: Relightable 3D Objects </br>using Generative Relighting</h1>
+            <div class="is-size-4 publication-authors">
+              <span class="author-block">
+                <a href="https://neurips.cc/Conferences/2025" target="_blank" style="font-size: 120%;"><b>NeurIPS 2025 (Spotlight)</b></a>
+              </span>
+            </div> 
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://tangjiapeng.github.io/">Jiapeng Tang</a><sup>*1,3</sup>,</span>
+  
+              <span class="author-block">
+                <a href="https://tangjiapeng.github.io/">Matthew Levine</a><sup>*1</sup>,</span>
+  
+              <span class="author-block">
+                    <a href="https://dorverbin.github.io/" target="_blank">Dor Verbin</a><sup>2</sup>,
+              </span>
+  
+              <span class="author-block">
+                <a href="http://stephangarbin.com/" target="_blank">Stephan J. Garbin</a><sup>1</sup>,
+              </span>
+  
+              <span class="author-block">
+                <a href="https://niessnerlab.org/members/matthias_niessner/profile.html">Matthias Niessner</a><sup>3</sup>,
+              </span>
+  
+              <span class="author-block">
+                <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>1</sup>,
+              </span>
+  
+              <span class="author-block">
+                <a href="https://pratulsrinivasan.github.io/" target="_blank">Pratul P. Srinivasan</a><sup>2</sup>,</span>&nbsp;&nbsp;&nbsp;
+  
+              <span class="author-block">
+                <a href="https://henzler.github.io/" target="_blank">Philipp Henzler</a><sup>1</sup>&nbsp;&nbsp;&nbsp;
+              </span>
+            </div>
+  
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>*</sup>Equal Contribution</span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Google Research</span>
+              <span class="author-block"><sup>2</sup>Google Deepmind</span>
+              <span class="author-block"><sup>3</sup>Technical University of Munich</span>
+            </div>
+  
+
+            <div class="column has-text-centered">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2406.06527" target="_blank" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- <span class="link-block">
+                  <a href="https://github.com/illuminerf/illuminerf_results" target="_blank" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (for Quantitative Results)</span>
+                  </a>
+                </span>
+              </div> -->
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="./index.html" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-home"></i>
+                    </span>
+                    <span>Main Page</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="./stanford_orb.html" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-flask"></i>
+                    </span>
+                    <span>Stanford-ORB Gallery</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="./tensoir.html" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-flask"></i>
+                    </span>
+                    <span>TensoIR Gallery</span>
+                  </a>
+                </span>
+               <span class="link-block">
+                  <a href="./wild.html" id="active-button" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-flask"></i>
+                    </span>
+                    <span>In the Wild Gallery</span>
+                  </a>
+                </span>
+
+              </div>
+              <!-- <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://github.com/illuminerf/illuminerf_results/releases" target="_blank" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-database"></i>
+                    </span>
+                    <span>Full Stanford-ORB Benchmark</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/illuminerf/illuminerf_results/releases" target="_blank" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-database"></i>
+                    </span>
+                    <span>Full TensoIR Benchmark</span>
+                  </a>
+                </span>
+              </div> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+        
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <h2 class="title is-3">In-the-wild Captures</h2>
+      <div class="content has-text-justified">
+        <p>
+        Although our method, like most that leverage pose-conditioned diffusion models, works best on in-distribution, structured captures and synthetic data, we also evaluate it on in-the-wild captures as well. 
+        </p>
+         
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%"  style="display: block; margin-left: auto; margin-right: auto;">
+              <source src="./static/videos/sewing4.mp4"
+                      type="video/mp4">
+            </video>
+            <hr/>
+            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%"  style="display: block; margin-left: auto; margin-right: auto;">
+              <source src="./static/videos/sewing.mp4"
+                      type="video/mp4">
+            </video>
+            <hr/>
+
+            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%"  style="display: block; margin-left: auto; margin-right: auto;">
+              <source src="./static/videos/sewing2.mp4"
+                      type="video/mp4">
+            </video>
+            <hr/>
+
+            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%"  style="display: block; margin-left: auto; margin-right: auto;">
+              <source src="./static/videos/sewing3.mp4"
+                      type="video/mp4">
+            </video>
+
+
+            <hr/>
+      
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="content has-text-justified">
+        <p>
+        This type of complex object is difficult enough that even NeRFCasting - optimized for the single, captured illumination condition - struggles to reconstruct it without artifacts. <b>The NeRFCasting result is shown below for comparison</b>
+
+        </p>
+         
+      </div>
+    </div>
+  </section>
+
+
+
+
+            <video  style="display: block; margin-left: auto; margin-right: auto;" poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/main_sewing.mp4"
+                      type="video/mp4">
+            </video>
+
+  <hr />
+
+  <br>
+
+  <hr/>
+
+    <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="content has-text-justified">
+        <p>
+        Our method can even be applied to in-the-wild captures of highly reflective objects, like the "Beemer" scene from Ref-NeRF.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+
+
+            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%"  style="display: block; margin-left: auto; margin-right: auto;">
+              <source src="./static/videos/one_lit_beemer.mp4"
+                      type="video/mp4">
+            </video>
+            <hr/>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source
+                code</a> of this website,
+              we just ask that you link back to this page in the footer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
