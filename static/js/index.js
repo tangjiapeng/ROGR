@@ -137,8 +137,8 @@ let STANFORD_ORB_OBJECTS = {
   },
   "gnome": {
     "gnome_scene003": ["gnome_scene007", "gnome_scene005"],
-    "gnome_scene005": ["gnome_scene003", "gnome_scene007"],
-    //"gnome_scene007": ["gnome_scene003", "gnome_scene005"],
+    // "gnome_scene005": ["gnome_scene003", "gnome_scene007"],
+    // "gnome_scene007": ["gnome_scene003", "gnome_scene005"],
   },
   "ball": {
     "ball_scene002": ["ball_scene004", "ball_scene003"],
@@ -233,17 +233,17 @@ function createTargetSceneTabsStanfordOrb(srcName, tgtNames) {
       </div>
 
       <div class="columns is-mobile is-size-7-mobile is-vcentered "> 
-        <div class="column is-half">
+        <div class="column is-one-third">
           <video class="video" width="512px" loop playsinline muted autoplay controls src="./static/stanford_orb_renders_compare_illuminerf/${srcName}_${tgtName}_source_lighting.mp4"></video>
           <br />
           (c) Source Rendering
         </div>
-        <div class="column is-half">
+        <div class="column is-one-third">
           <video class="video" width="512px" loop playsinline muted autoplay controls src="./static/stanford_orb_renders_compare_illuminerf/${srcName}_${tgtName}_illuminerf.mp4"></video>
           <br />
           (d) Relit Rendering (illumiNeRF) 
         </div>
-        <div class="column is-half">
+        <div class="column is-one-third">
           <video class="video" width="512px" loop playsinline muted autoplay controls src="./static/stanford_orb_renders_compare_illuminerf/${srcName}_${tgtName}.mp4"></video>
           <br />
           (e) Relit Rendering (Ours) 
@@ -312,39 +312,37 @@ function createTargetSceneTabsTensoIR(objectName, tgtNames) {
     `);
     let targetContent = `
       <div class="columns is-mobile has-text-centered is-size-7-mobile is-vcentered ">
-        <div class="column is-half">
+        <div class="column is-one-third">
           <video class="video" width="512px" loop playsinline muted autoplay controls src="./static/tensoir_results_fps15/${objectName}-src_spin.mp4"></video>
           <br />
           (a) Source Rendering
         </div>
-        <div class="column is-half">
+        <div class="column is-one-third">
           <video class="video" width="512px" loop playsinline muted autoplay controls src="./static/tensoir_results_fps15/${objectName}-${tgtName}-pbir.mp4"></video>
           <br />
           (b) Relit Rendering (Neural-PBIR)
         </div>
-      </div>
-      <div class="columns is-mobile has-text-centered is-size-7-mobile is-vcentered ">
-        <div class="column is-half">
+        <div class="column is-one-third">
           <video class="video" width="512px" loop playsinline muted autoplay controls src="./static/tensoir_results_fps15/${objectName}-${tgtName}-nero.mp4"></video>
           <br />
-          (a) Relit Rendering (NeRO)
-        </div>
-        <div class="column is-half">
-          <video class="video" width="512px" loop playsinline muted autoplay controls src="./static/tensoir_results_fps15/${objectName}-${tgtName}-illuminerf.mp4"></video>
-          <br />
-          (b) Relit Rendering (IllumiNeRF)
+          (c) Relit Rendering (NeRO)
         </div>
       </div>
       <div class="columns is-mobile has-text-centered is-size-7-mobile is-vcentered ">
-        <div class="column is-half">
+        <div class="column is-one-third">
+          <video class="video" width="512px" loop playsinline muted autoplay controls src="./static/tensoir_results_fps15/${objectName}-${tgtName}-illuminerf.mp4"></video>
+          <br />
+          (d) Relit Rendering (IllumiNeRF)
+        </div>
+        <div class="column is-one-third">
           <video class="video" width="512px" loop playsinline muted autoplay controls src="./static/tensoir_results_fps15/${objectName}-${tgtName}-render.mp4"></video>
           <br />
-          (c) Relit Rendering (Ours)
+          (e) Relit Rendering (Ours)
         </div>
-        <div class="column is-half">
+        <div class="column is-one-third">
           <video class="video" width="512px" loop playsinline muted autoplay controls src="./static/tensoir_results_fps15/${objectName}-${tgtName}-gt.mp4"></video>
           <br />
-          (d) Relit Rendering (GT)
+          (f) Relit Rendering (GT)
         </div>
       </div>
     `;

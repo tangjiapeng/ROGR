@@ -374,14 +374,19 @@
       <div class="column is-full">
         <div class="content has-text-left">
           <ul style="margin-top: -20px;">
-            <li><b>In the left</b>: we show generalized NeRF relighting results based on specular conditioning;</li>
-            <li><b>In the middle</b>: we show generalized NeRF relighting results based on global conditioning;</li>
-            <li><b>In the right</b>: we show generalized NeRF relighting results based on both global and specular conditioning.</li>
+            <li><b>In the left</b>: we show generalized NeRF relighting results based on both global and specular conditioning.</li>
+            <li><b>In the middle</b>: we show generalized NeRF relighting results based on specular conditioning;</li>
+            <li><b>In the right</b>: we show generalized NeRF relighting results based on global conditioning;</li>
           </ul>
         </div>
       </div>
 
       <div class="columns is-mobile has-text-centered is-size-7-mobile is-vcentered ">
+        <div class="column is-one-third">
+          <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/hotdog_both_100.mp4"></video>
+          <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/lego_both.mp4"></video>
+          <p> General and Specular Conditioning </p>
+        </div>
         <div class="column is-one-third">
           <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/hotdog_no_global_100.mp4"></video>
           <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/lego_no_global.mp4"></video>
@@ -391,11 +396,6 @@
           <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/hotdog_no_specular_100.mp4"></video>
           <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/lego_no_direcct.mp4"></video>
           <p> only General Conditioning </p>
-        </div>
-        <div class="column is-one-third">
-          <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/hotdog_both_100.mp4"></video>
-          <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/lego_both.mp4"></video>
-          <p> General and Specular Conditioning </p>
         </div>
         <!-- <div class="column is-one-fourth">
           <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study/both.mp4"></video>
