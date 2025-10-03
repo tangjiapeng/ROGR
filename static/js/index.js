@@ -101,33 +101,33 @@ $(document).ready(function () {
 
 let STANFORD_ORB_OBJECTS = {
   "baking": {
-   // "baking_scene001": ["baking_scene002", "baking_scene003"],
+    "baking_scene001": ["baking_scene002", "baking_scene003"],
     "baking_scene002": ["baking_scene001", "baking_scene003"],
     "baking_scene003": ["baking_scene001", "baking_scene002"],
   },
   "blocks": {
     "blocks_scene002": ["blocks_scene005", "blocks_scene006"],
     "blocks_scene005": ["blocks_scene002", "blocks_scene006"],
-    //"blocks_scene006": ["blocks_scene002", "blocks_scene005"],
+    "blocks_scene006": ["blocks_scene002", "blocks_scene005"],
   },
   "pepsi": {
     "pepsi_scene002": ["pepsi_scene003", "pepsi_scene004"],
-    //"pepsi_scene003": ["pepsi_scene004", "pepsi_scene002"],
+    "pepsi_scene003": ["pepsi_scene004", "pepsi_scene002"],
     "pepsi_scene004": ["pepsi_scene002", "pepsi_scene003"],
   },
   "teapot": {
-    //"teapot_scene001": ["teapot_scene002", "teapot_scene006"],
+    "teapot_scene001": ["teapot_scene002", "teapot_scene006"],
     "teapot_scene002": ["teapot_scene001", "teapot_scene006"],
     "teapot_scene006": ["teapot_scene001", "teapot_scene002"],
   },
   "curry": {
-    //"curry_scene001": ["curry_scene005", "curry_scene007"],
-    //"curry_scene005": ["curry_scene001", "curry_scene007"],
+    "curry_scene001": ["curry_scene005", "curry_scene007"],
+    "curry_scene005": ["curry_scene001", "curry_scene007"],
     "curry_scene007": ["curry_scene001", "curry_scene005"],
   },
   "car": {
     "car_scene002": ["car_scene004", "car_scene006"],
-    //"car_scene006": ["car_scene002", "car_scene004"],
+    "car_scene006": ["car_scene002", "car_scene004"],
     "car_scene004": ["car_scene002", "car_scene006"],
   },
   "chips": {
@@ -137,18 +137,18 @@ let STANFORD_ORB_OBJECTS = {
   },
   "gnome": {
     "gnome_scene003": ["gnome_scene007", "gnome_scene005"],
-    // "gnome_scene005": ["gnome_scene003", "gnome_scene007"],
-    // "gnome_scene007": ["gnome_scene003", "gnome_scene005"],
+    "gnome_scene005": ["gnome_scene003", "gnome_scene007"],
+    "gnome_scene007": ["gnome_scene003", "gnome_scene005"],
   },
   "ball": {
     "ball_scene002": ["ball_scene004", "ball_scene003"],
     "ball_scene003": ["ball_scene002", "ball_scene004"],
-    //"ball_scene004": ["ball_scene002", "ball_scene003"],
+    "ball_scene004": ["ball_scene002", "ball_scene003"],
   },
   "salt": {
     "salt_scene004": ["salt_scene005", "salt_scene007"],
     "salt_scene005": ["salt_scene004", "salt_scene007"],
-    //"salt_scene007": ["salt_scene005", "salt_scene004"],
+    "salt_scene007": ["salt_scene005", "salt_scene004"],
   },
   "cactus": {
     "cactus_scene001": ["cactus_scene005", "cactus_scene007"],
@@ -157,16 +157,16 @@ let STANFORD_ORB_OBJECTS = {
   },
   "cup": {
     "cup_scene003": ["cup_scene006", "cup_scene007"],
-  //  "cup_scene006": ["cup_scene003", "cup_scene007"],
+    "cup_scene006": ["cup_scene003", "cup_scene007"],
     "cup_scene007": ["cup_scene003", "cup_scene006"],
   },
   "pitcher": {
-    //"pitcher_scene001": ["pitcher_scene005", "pitcher_scene007"],
+    "pitcher_scene001": ["pitcher_scene005", "pitcher_scene007"],
     "pitcher_scene005": ["pitcher_scene001", "pitcher_scene007"],
     "pitcher_scene007": ["pitcher_scene001", "pitcher_scene005"],
   },
   "grogu": {
-    //"grogu_scene001": ["grogu_scene002", "grogu_scene003"],
+    "grogu_scene001": ["grogu_scene002", "grogu_scene003"],
     "grogu_scene002": ["grogu_scene001", "grogu_scene003"],
     "grogu_scene003": ["grogu_scene001", "grogu_scene002"],
   },

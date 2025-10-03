@@ -329,8 +329,16 @@
         <label class="label" style="width: 100%; vertical-jpg: middle;margin: 0; padding: 0;">
           <img src="./static/images/mvrelit.png" border="0" class="zoom">
         </label>
-            <p>Our multi-view relighting diffusion model takes as input N posed images illuminated with a consistent, but unknown illumination, represented by the camera raymap and the source pixel values, and an environment map per image, that has been rotated to the camera pose. The diffusion model generates images of the same object from the same poses, but lit by input environment map. In order to generate our multi-illumination dataset, we repeat this relighting process M times with M different environment maps.</p>
+            <p>Our multi-view relighting diffusion model takes as input N posed images illuminated with a consistent, 
+              but unknown illumination, represented by the camera raymap and the source pixel values,
+               and an environment map per image, that has been rotated to the camera pose. 
+               The diffusion model generates images of the same object from the same poses, 
+               but lit by input environment map. In order to generate our multi-illumination dataset, 
+               we repeat this relighting process M times with M different environment maps.</p>
 
+        <label class="label" style="width: 100%; vertical-jpg: middle;margin: 0; padding: 0;">
+          <img src="./static/images/relightnerf.png" border="0" class="zoom">
+        </label>
             <p>
             We use a combination of two lighting conditioning signals to train the NeRF on our generated multi-illumination dataset. The general lighting encoding <b>f<sup>general</sup></b> is used for encoding the full environment map in a 
             single embedding and is obtained using a transformer encoder applied to the entire sphere of incident radiance. The specular encoding <b>f<sup>specular</sup></b> is composed of the environment map value, as well as prefiltered versions of the environment map, 
@@ -390,12 +398,12 @@
         <div class="column is-one-third">
           <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/hotdog_no_global_100.mp4"></video>
           <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/lego_no_global.mp4"></video>
-          <p> only Specular Conditioning </p>
+          <p> Only Specular Conditioning </p>
         </div>
         <div class="column is-one-third">
           <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/hotdog_no_specular_100.mp4"></video>
           <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study_fps15/lego_no_direcct.mp4"></video>
-          <p> only General Conditioning </p>
+          <p> Only General Conditioning </p>
         </div>
         <!-- <div class="column is-one-fourth">
           <video class="video" loop playsinline muted autoplay controls src="./static/ablation_study/both.mp4"></video>
