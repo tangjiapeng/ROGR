@@ -3,7 +3,7 @@ import imageio.v3 as iio
 import numpy as np
 
 # Input and output directory
-fps = 30
+fps = 20
 input_folder = "./tensoir_results"  # Change this to your folder path
 output_folder = "./tensoir_results_fps15"  # Change if needed, else use input folder
 
@@ -40,6 +40,7 @@ for video_file in video_files[:100]:
 
     # Read video frames and metadata
     frames = iio.imread(input_path, index=None)
+    print('read', input_path, len(frames))
     #assert len(frames) == 200,
     if len(frames) != 100 and  len(frames) != 200:
         print(f"Expected 100 frames, but got {len(frames)}, {input_path}")
@@ -47,6 +48,7 @@ for video_file in video_files[:100]:
     frames = frames[:num_frames]
 
     # Write video with 30 FPS
+    print(fps, len(frames))
     iio.imwrite(output_path, np.array(frames), fps=fps, plugin="pyav", codec="libx264")
 
     print(f"Saved: {output_path}")
